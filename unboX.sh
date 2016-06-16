@@ -129,6 +129,7 @@ brew install ${brews[@]}
 
 ############################################################
 printf "☞ Casks installation."
+brew tap caskroom/versions
 source ~/.unboX/brew/cask.cfg
 brew cask install ${casks[@]}
 
@@ -136,6 +137,7 @@ brew cask install ${casks[@]}
 
 ############################################################
 printf "☞ Fonts installation."
+brew tap caskroom/fonts
 source ~/.unboX/brew/fonts.cfg
 brew cask install ${fonts[@]}
 
