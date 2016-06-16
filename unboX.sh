@@ -129,10 +129,6 @@ echo
 
 
 
-
-
-
-
 ############################################################
 printf "☞ Homebrew installation. Press any key to start."
 read key
@@ -161,6 +157,12 @@ printf "☞ Fonts installation."
 brew tap caskroom/fonts
 source ~/.unboX/brew/fonts.cfg
 brew cask install ${fonts[@]}
+
+
+
+############################################################
+printf "☞ Install Oh My Zsh."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 
 ############################################################
