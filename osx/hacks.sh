@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Remove the last login line in terminal
+touch ~/.hushlogin
+
 # Expand save panel by default
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 

@@ -70,6 +70,14 @@ echo
 
 
 ############################################################
+printf "☞ Setting git: "
+ln -s ~/.unboX/git/.gitconfig ~/
+ln -s ~/.unboX/git/.gitignore_global ~/
+printf "${SUCCESS}\n"
+
+
+
+############################################################
 printf "☞ Setting GIT username: ${GREEN}"
 read GIT_USERNAME
 printf "${NC}"
@@ -97,6 +105,15 @@ printf "${NC}\n"
 
 
 ############################################################
+printf "☞ Setting vim: "
+ln -s ~/.unboX/vim/.vimrc ~/
+mkdir -p ~/.vim
+ln -s ~/.unboX/vim/colors ~/.vim/
+printf "${SUCCESS}\n"
+
+
+
+############################################################
 printf "☞ Setting OS X preferences: "
 source ~/.unboX/osx/preferences.sh
 printf "${SUCCESS}\n"
@@ -109,6 +126,10 @@ printf "☞ Setting OS X sytem hacks: "
 source ~/.unboX/osx/preferences.sh
 printf "${SUCCESS}\n"
 echo
+
+
+
+
 
 
 
