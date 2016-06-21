@@ -23,7 +23,6 @@ SUDO_MISSING=$(sudo -n true 2>&1 | wc -l)
 if [ $SUDO_MISSING = 1 ]; then
   printf "${ORANGE}⚠ Administration rights are needed for this script${NC}\n"
   sudo -v
-  echo
 else
   printf "☞ Checking for administration rights: ${SUCCESS}\n"
 fi
@@ -56,9 +55,10 @@ echo
 ############################################################
 printf "☞ Cloning GIT repository: "
 if [[ -d ~/.unboX ]]; then
-  rm -rf ~/.unboX
+  #rm -rf ~/.unboX
+  test=1
 fi
-git clone git@github.com:rsnts/unboX.git ~/.unboX 2> ~/.unboX.log
+#git clone git@github.com:rsnts/unboX.git ~/.unboX 2> ~/.unboX.log
 if [ ! -d ~/.unboX ]; then
   printf "${FAILED} GIT clone failed (check log: ~/unboX.log)${NC}\n"
   exit -1
@@ -71,8 +71,8 @@ echo
 
 ############################################################
 printf "☞ Setting git: "
-ln -s ~/.unboX/git/.gitconfig ~/
-ln -s ~/.unboX/git/.gitignore_global ~/
+ln -sf ~/.unboX/git/gitconfig ~/
+ln -sf ~/.unboX/git/gitignore_global ~/
 printf "${SUCCESS}\n"
 
 
@@ -106,9 +106,9 @@ printf "${NC}\n"
 
 ############################################################
 printf "☞ Setting vim: "
-ln -s ~/.unboX/vim/.vimrc ~/
+ln -sf ~/.unboX/vim/.vimrc ~/
 mkdir -p ~/.vim
-ln -s ~/.unboX/vim/colors ~/.vim/
+ln -sf ~/.unboX/vim/colors ~/.vim/
 printf "${SUCCESS}\n"
 
 
@@ -162,7 +162,11 @@ brew cask install ${fonts[@]}
 
 ############################################################
 printf "☞ Install Oh My Zsh."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+ln -sf ~/.unboX/zsh/.zshrc ~/
+touch ~/.hushlogin
+sudo /bin/sh -c 'echo "/usr/local/bin/zsh" >> /etc/shells'
+chsh -s /usr/local/bin/zsh
 
 
 ############################################################
@@ -171,22 +175,3 @@ printf "${GREEN}OS X Environment Configuration Script${NC}\n\n"
 rm ~/.unboX.log
 printf "${ORANGE}⚠ Setup done. Restart your system now${NC}\n"
 echo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

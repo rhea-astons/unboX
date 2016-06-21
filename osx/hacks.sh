@@ -40,7 +40,7 @@ sudo pmset -a standbydelay 43200
 
 # Save screenshots to ~/Downloads/Screenshots as png
 mkdir -p ~/Downloads/Screenshots
-defaults write com.apple.screencapture location -string "~/Downloads/Screenshots"
+defaults write com.apple.screencapture location -string "~/Screenshots"
 defaults write com.apple.screencapture type -string "png"
 
 # Enable HiDPI display modes

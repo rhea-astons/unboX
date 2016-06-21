@@ -1,0 +1,9 @@
+alias cask="brew cask"
+
+alias dev="cd ~/Development"
+alias dl="cd ~/Downloads"
+
+alias archey="archey -c"
+
+alias cl="clear"
+alias cla="clear && archey"
