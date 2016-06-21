@@ -55,10 +55,9 @@ echo
 ############################################################
 printf "☞ Cloning GIT repository: "
 if [[ -d ~/.unboX ]]; then
-  #rm -rf ~/.unboX
-  test=1
+  rm -rf ~/.unboX
 fi
-#git clone git@github.com:rsnts/unboX.git ~/.unboX 2> ~/.unboX.log
+git clone git@github.com:rsnts/unboX.git ~/.unboX 2> ~/.unboX.log
 if [ ! -d ~/.unboX ]; then
   printf "${FAILED} GIT clone failed (check log: ~/unboX.log)${NC}\n"
   exit -1
