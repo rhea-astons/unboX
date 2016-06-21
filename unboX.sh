@@ -70,8 +70,8 @@ echo
 
 ############################################################
 printf "☞ Setting git: "
-ln -sf ~/.unboX/git/gitconfig ~/
-ln -sf ~/.unboX/git/gitignore_global ~/
+ln -sf ~/.unboX/git/.gitconfig ~/
+ln -sf ~/.unboX/git/.gitignore_global ~/
 printf "${SUCCESS}\n"
 
 
